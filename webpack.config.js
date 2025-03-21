@@ -10,7 +10,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html', // Ruta a tu archivo HTML de plantilla
+      template: './src/index.html', // Ruta a tu archivo HTML de plantilla
       filename: './index.html' // Nombre del archivo HTML generado en la carpeta dist
     })
   ],
@@ -21,6 +21,9 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
+		  options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
         },
       },
     ],
